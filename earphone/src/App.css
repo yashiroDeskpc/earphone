@@ -1,6 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0;
 }
 
 h1 {
@@ -10,5 +11,70 @@ h1 {
   font-weight: 400;
 }
 
+.search_type {
+  display: block;
+  height: 37px;
+  margin: 0 auto;
+  position: relative;
+  top: 15px;
+}
 
+.search_window{
+  display: flex;
+}
+.search_box{
+  width: 515px;
+}
+.search_icon{
+  position: relative;
+  left: 95%;
+  top: -15px;
+}
 
+.search_text{
+  position: relative;
+  top: 15px;
+  background-color: #E3E3E3;
+  width: 515px;
+  height: 37px;
+}
+
+.kaitori_btn{
+  background-color: #282828;
+  color: white;
+  position: relative;
+  left: 6em;
+}
+
+ul li{
+  list-style-type: none;
+  p{
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.mypage{
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.gnav_a{
+  display: flex;
+}
+
+.h_flex{
+  display: flex;
+  justify-content:left;
+  margin: 0;
+  padding: 0;
+}
+
+nav{
+  display: flex;
+}
+
+.guide{
+  display: flex;
+}
