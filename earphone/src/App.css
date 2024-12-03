@@ -1,3 +1,8 @@
+body{
+  padding: 0;
+  margin: 0;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -9,31 +14,41 @@ h1 {
   line-height: 1.1;
   color: black;
   font-weight: 400;
+  margin: 10px;
+  padding: 0;
+}
+
+.h_top{
+  display: flex;
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
 }
 
 .search_type {
-  display: block;
   height: 37px;
-  margin: 0 auto;
-  position: relative;
-  top: 15px;
+  margin: 0;
 }
 
 .search_window{
   display: flex;
+  position: relative;
+  margin-left: 30px;
+  margin-top: 20px;
 }
 .search_box{
   width: 515px;
 }
+
 .search_icon{
-  position: relative;
-  left: 95%;
-  top: -15px;
+  position:absolute;
+  top: 10px;
+  right: 120px;
+  margin: 0;
+  padding: 0;
 }
 
 .search_text{
-  position: relative;
-  top: 15px;
   background-color: #E3E3E3;
   width: 515px;
   height: 37px;
@@ -42,8 +57,8 @@ h1 {
 .kaitori_btn{
   background-color: #282828;
   color: white;
-  position: relative;
-  left: 6em;
+  height: 37px;
+  margin-left: 15px;
 }
 
 ul li{
@@ -54,27 +69,36 @@ ul li{
   }
 }
 
-.mypage{
+.mypage {
   display: flex;
-  padding: 0;
-  margin: 0;
+  position: absolute;
+  right: 80px; /* 左端に配置 */
+  top: 30px; /* 上端に配置 */
+  justify-content: space-between; /* アイコンとテキストの間隔を均等に */
 }
 
-.gnav_a{
-  display: flex;
+.mypage li {
+  align-items: center;
+  text-align: center;
+  margin: 0 35px 0 50px;
+}
+
+.mypage p {
+  margin-left: 0px; /* アイコンとテキストの間のスペース */
+  font-size: 14px;
+  color: black;
 }
 
 .h_flex{
   display: flex;
-  justify-content:left;
-  margin: 0;
-  padding: 0;
 }
 
-nav{
-  display: flex;
+
+summary::-webkit-details-marker {
+  /* Safariで表示されるデフォルトの三角形アイコンを消します */
+  display: none;
 }
 
-.guide{
-  display: flex;
+.js-details-content {
+  transition: height 0.5s ease;
 }
