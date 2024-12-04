@@ -1,10 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import Logo from '../../public/img/eearphoneLogo.svg';
 import { FaSearch } from "react-icons/fa";
 import { IoPerson } from "react-icons/io5";
 import { FaHeart } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
+
+
+const Accordion = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsActive(true);
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsActive(false);
+    setIsOpen(false);
+  };
+
+  return (
+    <details
+      open={isOpen}
+      className="js-details"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <summary className={`js-details-summary ${isActive ? 'is-active' : ''}`}>詳細</summary>
+      <div className="js-details-content" style={{ display: isOpen ? 'block' : 'none' }}>
+        <p>詳細情報がここに表示されます。</p>
+      </div>
+    </details>
+  );
+};
 
 
 function Header() {
@@ -50,6 +80,8 @@ function Header() {
                 </li>
             </ul>
             </div>
+            <Accordion />
+
         </header>
     );
 }

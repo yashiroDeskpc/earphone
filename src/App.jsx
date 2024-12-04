@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import './App.css'
 import Header from'./component/header'
-import Accordion from './component/test'
 import Footer from './component/footer'
+import Home from './component/swiper'
 
 function App() {
 
   return (
     <>
     <Header />
-    <Accordion />
+    <Home />
     <Footer />
     </>
   )
