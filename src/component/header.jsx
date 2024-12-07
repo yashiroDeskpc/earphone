@@ -42,7 +42,7 @@ function Header() {
         <header>
             <h1>世界中のイヤホン・ヘッドホンが試聴・買取・購入ができる専門店</h1>
             <div className='h_top'>
-            <img src={Logo} alt="e☆イヤホン" />
+            <img className='img_logo' src={Logo} alt="e☆イヤホン" />
             <div className='search_window'>
                 <label>
                     <select name="search_type" className="search_type">
@@ -59,26 +59,27 @@ function Header() {
             <FaSearch className='search_icon'/>
             <button className='kaitori_btn'>買取金額検索</button>
             </div>
-            <ul className='mypage'>
-                <li>
-                    <div className='container'>
-                    <IoPerson id='left'/>
-                    <p>ログイン</p>
-                    </div>
-                </li>
-                <li>
-                    <div className='container'>
-                    <FaHeart/>
-                    <p>お気に入り</p>
-                    </div>
-                </li>
-                <li>
-                    <div className='container'>
-                    <FaShoppingCart/>
-                    <p>カート</p>
-                    </div>
-                </li>
-            </ul>
+            <ul className="mypage">
+  <li>
+    <div className="container">
+      <IoPerson />
+      <p>ログイン</p>
+    </div>
+  </li>
+  <li>
+    <div className="container">
+      <FaHeart />
+      <p>お気に入り</p>
+    </div>
+  </li>
+  <li>
+    <div className="container">
+      <FaShoppingCart />
+      <p>カート</p>
+    </div>
+  </li>
+</ul>
+
             </div>
             <Accordion />
 

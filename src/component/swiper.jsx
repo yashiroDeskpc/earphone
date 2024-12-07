@@ -1,42 +1,99 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import review1 from '../../public/img/review1.png'
+import review2 from '../../public/img/review2.png'
 
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/free-mode";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
 
-import { FreeMode, Pagination } from "swiper/modules";
-
-const data = ["Card 1", "Card 2", "Card 3", "Card 4"];
-
-const Home = () => {
-  return (
-    <>
-     <Swiper
-        breakpoints={{
-          340: {
-            slidesPerView: 2,
-            spaceBetween: 15,
-          },
-          700: {
-            slidesPerView: 3,
-            spaceBetween: 15,
-          },
-        }}
-        freeMode={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[FreeMode, Pagination]}
-        className="max-w-[90%] lg:max-w-[80%]"
-      >
-        {data.map((d) => (
-          <SwiperSlide>
-            <div style={{ background: "yellow", height: "100px", margin:"50px" }}>{d}</div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </>
-  )
+function rand(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-export default Home;
+function imgUrl() {
+  const id = rand(1, 200);
+  return `${review1}`;
+}
+
+function imgUrl2() {
+  const id = rand(1, 200);
+  return `${review2}`;
+}
+
+function createSlide() {
+  return (
+    <SwiperSlide>
+      <img className="img" src={imgUrl()} alt="" />
+    </SwiperSlide>
+  );
+}
+
+function createSlidce2() {
+  return (
+    <SwiperSlide>
+      <img className="img" src={imgUrl2()} alt="" />
+    </SwiperSlide>
+  );
+}
+
+export default () => {
+  return (
+    <Swiper
+      modules={[Navigation, Pagination, Autoplay]}
+      slidesPerView={3}
+      navigation
+      autoplay={{ delay: 3000 }}
+      pagination={{ clickable: true }}
+      centeredSlides={true}
+      loop={true}
+    >
+      
+      {createSlidce2()}
+      {createSlide()}
+      {createSlidce2()}
+      {createSlide()}
+      {createSlidce2()}
+      {createSlide()}
+      {createSlidce2()}
+      {createSlide()}
+    </Swiper>
+  );
+};
+
+
+
+
+// const createSlide = () => (
+//   <SwiperSlide>
+//         <div
+//       style={{
+//         height: '200px',
+//         backgroundImage: `url(${review1})`, // 画像を背景に設定
+//         backgroundRepeat: 'no-repeat'
+        
+//       }}
+//     >
+//     </div>
+//   </SwiperSlide>
+// );
+
+// const SliderComponent = () => {
+//   return (
+//     <Swiper
+//       modules={[Pagination, Autoplay]}
+//       slidesPerView={1}
+//       navigation
+//       autoplay={{ delay: 10000 }}
+//       pagination={{ clickable: true }}
+//       direction={"horizontal"}
+//     >
+//       {createSlide()}
+//     </Swiper>
+//   );
+// };
+
+// export default SliderComponent;
