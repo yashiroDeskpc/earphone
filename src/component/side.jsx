@@ -59,7 +59,7 @@ function Sidesearch({ img, alt, catename }) {
 function Categ_search() {
     return (
         <div>
-            <h2>カテゴリーから探す</h2>
+            <h2 className="info-title">カテゴリーから探す</h2>
             <div className="sidecateg">
                 {leftcatecon.map((cate) => (
                     <Sidesearch key={cate.id} img={cate.img} alt={cate.alt} catename={cate.catename} />
@@ -117,7 +117,7 @@ function Brandnamesearch({ brandname }) {
 function Brand_search() {
     return (
         <div>
-            <h2>ブランドから探す</h2>
+            <h2 className="info-title">ブランドから探す</h2>
             <div className="sidecategbrand">
                 {brandcon.map((brand) => (
                     <Brandnamesearch key={brand.id} brandname={brand.brandname} />
@@ -146,8 +146,8 @@ const announcements = [
 function InformationBox() {
     return (
         <div className="info-box">
-            <h2 className="info-title">
-                INFORMATION <span className="info-subtitle">お知らせ</span>
+            <h2 className="info-title" id="infomation">
+                INFORMATION <br /><span className="info-subtitle">お知らせ</span>
             </h2>
             <div className="info-content">
                 {announcements.map((announcement, index) => (
